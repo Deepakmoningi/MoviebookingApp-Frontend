@@ -1,0 +1,70 @@
+<div class="container-sm justify-content-center col-lg-6 mt-5">
+
+	<div>
+		<h2 class="text-center">
+			Register
+		</h2>
+
+		<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+
+			<div class="mt-3">
+				<label for="firstName">First Name</label>
+				<input class="form-control" id="firstName" placeholder="First Name"  formControlName="firstName"  type="text" />
+				<span class="text-danger" *ngIf="(userForm.controls['firstName'].dirty || userForm.controls['firstName'].touched)  && userForm.hasError('required','firstName')">*First Name is required</span>
+			</div>
+
+			<div class="mt-3">
+				<label for="lastName">Last Name</label>
+				<input class="form-control" id="lastName" placeholder="Last Name"  formControlName="lastName" type="text" />
+				<span class="text-danger" *ngIf="(userForm.controls['lastName'].dirty || userForm.controls['lastName'].touched ) && userForm.hasError('required','lastName')">*Last Name is required</span>
+			</div>
+
+			<div class="mt-3">
+				<label for="email" class="mb-2">Email Id</label>
+				<input class="form-control" id="email" placeholder="Email" formControlName="email" type="email" />
+				<span class="text-danger" *ngIf="(userForm.controls['email'].dirty || userForm.controls['email'].touched) && userForm.hasError('required','email')">*Email is required</span>
+			</div>
+
+			<div class="mt-3">
+				<label for="loginid" class="mb-2">LoginId</label>
+				<input class="form-control" id="loginid" placeholder="LoginId" formControlName="loginId" type="text" />
+				<span class="text-danger" *ngIf="(userForm.controls['loginId'].dirty || userForm.controls['loginId'].touched ) && userForm.hasError('required','loginId')">*LoginId required</span>
+			</div>
+
+			<div class="mt-3"> 
+				<label for="role" class="mb-2">Role</label><br>
+				<select formControlName="role" id="role" class="form-select">
+					<option select value="">Select your role</option>
+					<option value="Admin">Admin</option>
+					<option value="Member">Member</option>
+				</select>
+				<span class="text-danger" *ngIf="(userForm.controls['role'].dirty || userForm.controls['role'].touched ) && userForm.hasError('required','role')">*Role required</span>
+			</div>
+
+			<div class="mt-3">
+				<label for="contactnumber" class="mb-2">Contact Number</label>
+				<input class="form-control" id="contactnumber" placeholder="Contact Number"  formControlName="contactNumber" type="tel" />
+				<span class="text-danger" *ngIf="(userForm.controls['contactNumber'].dirty || userForm.controls['contactNumber'].touched ) && userForm.hasError('required','contactNumber')">*Contact Number required</span>
+			</div>
+
+			<div class="mt-3">
+				<label for="password" class="mb-2">Password</label>
+				<input class="form-control" id="password" placeholder="Password"  formControlName="password" type="password" />
+				<span class="text-danger" *ngIf="(userForm.controls['password'].dirty || userForm.controls['password'].touched ) && userForm.hasError('required','password')">*Password required</span>
+			</div>
+
+			<div class="mt-3">
+				<label for="confirmpassword" class="mb-2">Confirm Password</label>
+				<input class="form-control" id="confirmpassword" placeholder="Confirm Password" formControlName="confirmPassword" type="password" />
+				<span class="text-danger" *ngIf="(userForm.controls['confirmPassword'].dirty || userForm.controls['confirmPassword'].touched) && userForm.hasError('required','confirmPassword')">*Confirm Password is required</span>
+			</div>
+
+			<div class="mt-4 mb-3">
+				<button type="submit" class="form-control btn btn-primary border-dark" [disabled]="!userForm.valid">Signup</button>
+			</div>
+			
+		</form>
+	</div>
+</div>
+
+

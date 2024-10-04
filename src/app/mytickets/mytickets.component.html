@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row mt-5" *ngIf="ticketsByuser">
+        <div class="col-lg-4 col-md-6 col-sm-12 mb-4" *ngFor="let ticket of ticketsByuser">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title mb-2">Movie Name: {{ticket.movieName}}</h5>
+                    <h6 class="card-subtitle mb-1">Theatre Name: {{ticket.theatreName}}</h6>
+                    <p class="card-text mb-1">Number of Seats: {{ticket.numberOfTickets}}</p>
+                    <p class="card-text">Booked Seat Numbers: {{ticket.seatNumbers}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-danger mb-3" routerLink="/movies">Back</button>
+</div>
+

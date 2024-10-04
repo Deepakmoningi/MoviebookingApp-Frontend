@@ -1,0 +1,36 @@
+<div class="container">
+
+    <div class="form-group mt-5 mb-4">
+        <input type="text" class="form-control" id="searchmovie" 
+        [(ngModel)]="searchMovie" placeholder="Enter Movie Name to search"
+        (input)="findMovieBySearch(searchMovie)">
+    </div>
+
+    <div class="row" *ngIf="searchMovie.trim().length==0">
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let movie of moviesList">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{movie.movieName}}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{movie.theatreName}}</h6>
+                    <button class="btn btn-lg btn-primary" (click)="bookTickectsNavigation(movie)">Book Now</button>
+                    <button *ngIf="service.isAdmin" class="btn btn-lg btn-danger" (click)="deleteMovie(movie)" [style]="{'margin-left':'.5em'}">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="searchMovie.trim().length">
+        <div class="col-lg-4 col-md-6 col-sm-12" *ngFor="let movie of moviesList">
+            <div class="card mb-4">
+                <div class="card-body">
+                  <h5 class="card-title">{{movie.movieName}}</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">{{movie.theatreName}}</h6>
+                  <button class="btn btn-lg btn-primary" (click)="bookTickectsNavigation(movie)">Book Now</button>
+                  <button *ngIf="service.isAdmin" class="btn btn-lg btn-danger" (click)="deleteMovie(movie)" [style]="{'margin-left':'.5em'}">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+

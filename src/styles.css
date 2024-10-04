@@ -1,0 +1,18 @@
+/* You can add global styles to this file, and also import other style files */
+.mt-5{
+    margin-top: 5rem!important;
+}
+
+.form-control{
+    border-radius: 0.50rem;
+}
+
+.custom-toast-position{
+    top:80px !important;
+    right: 20px !important;
+    left: auto !important;
+    position: fixed;
+    border-radius: 8px;
+}
+
+
